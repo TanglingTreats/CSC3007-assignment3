@@ -18,7 +18,11 @@ body {
     width: 30%;
 }
 
-#yearSelection {
+.country{
+}
+.country.select{
+    fill: pink;
+    stroke: pink;
 }
 
 .selection {
