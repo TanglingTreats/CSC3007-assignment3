@@ -6,19 +6,21 @@ body {
     height: 100%;
 }
 
-#tooltip {
-    z-index: 10;
-    padding: 10px;
-    background-color: white;
-    border-radius: 10px;
-    border: 1px solid black;
+.tooltip {
+    background-color: beige;
+    text-transform: capitalize;
+    padding: 10px 5px;
+    border-radius: 5px;
 }
 
-#checkboxes {
-    width: 30%;
+.map {
+    background-color: #D1D1D1;
 }
 
-#yearSelection {
+.district.select{
+    /*fill: pink;*/
+    stroke: pink;
+    stroke-width: 5px;
 }
 
 .selection {
@@ -35,6 +37,7 @@ body {
     height: 600px;
 }
 
+/*---- General CSS ----*/
 .heading {
     font-family: 'Roboto', sans-serif;
     padding: 0.3rem 2rem;
@@ -75,9 +78,7 @@ body {
 and (min-device-width: 320px)
 and (max-device-width: 640px)
 and (-webkit-min-device-pixel-ratio: 2) {
-    #checkboxes {
-        width: 90%;
-    }
+
     .heading {
         margin-top: 5px;
     }
