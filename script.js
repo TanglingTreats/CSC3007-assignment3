@@ -64,10 +64,37 @@ let time = Date.now();
       if (area == undefined) {
         console.log(data.properties["Name"].toLowerCase());
       }
-      //return area.Population === 0
-      // ? "black"
-      //: d3.interpolateGnBu(pop_col_scale(area.Population));
-      return "black";
+      return area == undefined
+        ? "black"
+        : d3.interpolateGnBu(pop_col_scale(area.Population));
+      //return "black";
       //return d3.interpolateGnBu(pop_col_scale(area.Population));
+    })
+    .on("mouseover", (event, data) => {
+      const area = clean_pop_data.find(
+        (pop) =>
+          pop["Subzone"].toLowerCase() === data.properties["Name"].toLowerCase()
+      );
+      d3.select(event.target).attr("class", "district").classed("select", true);
+
+      d3.select(".tooltip")
+        .html(
+          `Sub-District: ${data.properties[
+            "Name"
+          ].toLowerCase()}<br/>Population: ${
+            area == undefined ? 0 : area.Population
+          }`
+        )
+        .style("position", "absolute")
+        .style("left", width * (70 / 100))
+        .style("top", height * (80 / 100))
+        .style("visibility", "visible");
+    })
+    .on("mouseout", (event, data) => {
+      d3.select(event.target)
+        .attr("class", "district")
+        .classed("select", false);
+
+      d3.select(".tooltip").style("visibility", "hidden");
     });
 })();
