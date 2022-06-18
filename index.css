@@ -11,14 +11,14 @@ body {
     text-transform: capitalize;
     padding: 10px 5px;
     border-radius: 5px;
+    visibility: hidden;
 }
 
 .map {
-    background-color: #D1D1D1;
+    background-color: #CCE7FF;
 }
 
 .district.select{
-    /*fill: pink;*/
     stroke: pink;
     stroke-width: 5px;
 }
