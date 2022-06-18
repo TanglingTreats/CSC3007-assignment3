@@ -18,6 +18,9 @@ body {
     width: 30%;
 }
 
+.map {
+    background-color: #D1D1D1;
+}
 .country{
 }
 .country.select{
